@@ -1,0 +1,15 @@
+version: "3.5"
+
+services:
+  example:
+    image: omab/less-watch
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SOURCE_DIR=/app/less
+      - DEST_DIR=/app/css
+      - MAIN_FILE=example.less
+    volumes:
+      - .:/app
+    working_dir: /app
